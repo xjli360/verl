@@ -2,6 +2,7 @@
 set -xeuo pipefail
 
 export WANDB_API_KEY=009423980cdebe492cf71c4474415000f062d711
+export https_proxy=http://star-proxy.oa.com:3128
 # export VLLM_USE_V1=1
 
 project_name='Qwen2.5-3B'
