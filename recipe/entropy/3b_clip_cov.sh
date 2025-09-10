@@ -44,10 +44,10 @@ RUNTIME_ENV=${RUNTIME_ENV:-"${WORKING_DIR}/verl/trainer/runtime_env.yaml"}
 NNODES=${NNODES:-1}
 # Paths
 RAY_DATA_HOME=${RAY_DATA_HOME:-"${HOME}/verl"}
-MODEL_PATH=${MODEL_PATH:-"/dockerdata/models/Qwen/Qwen2.5-3B"}
-CKPTS_DIR=${CKPTS_DIR:-"/dockerdata/checkpoints/Qwen2.5-3B-clipcov"}
-TRAIN_FILE=${TRAIN_FILE:-"/dockerdata/datasets/BytedTsinghua-SIA/DAPO-Math-17k/data/dapo-math-17k.parquet"}
-TEST_FILE=${TEST_FILE:-["/dockerdata/datasets/BytedTsinghua-SIA/AIME-2024/data/aime-2024.parquet"]}
+MODEL_PATH=${MODEL_PATH:-"/apdcephfs_zwfy/share_304071302/xjli/models/Qwen/Qwen2.5-3B"}
+CKPTS_DIR=${CKPTS_DIR:-"/apdcephfs_zwfy/share_304071302/xjli/checkpoints/Qwen2.5-3B-clipcov"}
+TRAIN_FILE=${TRAIN_FILE:-"/apdcephfs_zwfy/share_304071302/xjli/datasets/BytedTsinghua-SIA/DAPO-Math-17k/data/dapo-math-17k.parquet"}
+TEST_FILE=${TEST_FILE:-["/apdcephfs_zwfy/share_304071302/xjli/datasets/BytedTsinghua-SIA/AIME-2024/data/aime-2024.parquet"]}
 
 # Algorithm
 temperature=1.0
