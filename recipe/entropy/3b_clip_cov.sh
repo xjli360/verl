@@ -21,7 +21,7 @@ clip_cov_lb=1.0
 clip_cov_ub=5.0
 
 max_prompt_length=$((1024 * 2))
-max_response_length=$((1024 * 8))
+max_response_length=$((1024 * 6))
 enable_overlong_buffer=False
 overlong_buffer_len=$((1024 * 2))
 overlong_penalty_factor=1.0
@@ -32,7 +32,7 @@ enable_filter_groups=True
 filter_groups_metric=acc
 max_num_gen_batches=10
 train_prompt_bsz=128
-gen_prompt_bsz=$((train_prompt_bsz * 4))
+gen_prompt_bsz=$((train_prompt_bsz * 3))
 train_prompt_mini_bsz=32
 n_resp_per_prompt=8
 max_token=18820
