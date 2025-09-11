@@ -32,10 +32,10 @@ enable_filter_groups=True
 filter_groups_metric=acc
 max_num_gen_batches=10
 train_prompt_bsz=128
-gen_prompt_bsz=$((train_prompt_bsz * 3))
+gen_prompt_bsz=$((train_prompt_bsz * 4))
 train_prompt_mini_bsz=32
 n_resp_per_prompt=8
-max_token=18820
+max_token=22820
 
 # Ray
 RAY_ADDRESS=${RAY_ADDRESS:-"http://localhost:8265"}
@@ -60,7 +60,7 @@ kl_cov_ratio=0.2
 use_dynamic_bsz=True
 infer_micro_batch_size=null
 train_micro_batch_size=null
-offload=False
+offload=True
 
 HYDRA_FULL_ERROR=1 python -m recipe.entropy.main_entropy \
     data.train_files="${TRAIN_FILE}" \
