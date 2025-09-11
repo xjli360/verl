@@ -60,7 +60,6 @@ class RayEntropyTrainer(RayPPOTrainer):
 
         import wandb
         wandb.init(project=self.config.trainer.project_name,
-                   experiment_name=self.config.trainer.experiment_name,
                    key="009423980cdebe492cf71c4474415000f062d711")
 
         logger = Tracking(
