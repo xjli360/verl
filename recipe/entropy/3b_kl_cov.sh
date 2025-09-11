@@ -33,7 +33,7 @@ train_prompt_bsz=256
 gen_prompt_bsz=$((train_prompt_bsz * 3))
 train_prompt_mini_bsz=32
 n_resp_per_prompt=8
-max_token=20720
+max_token=26720
 
 # Ray
 RAY_ADDRESS=${RAY_ADDRESS:-"http://localhost:8265"}
@@ -42,10 +42,10 @@ RUNTIME_ENV=${RUNTIME_ENV:-"${WORKING_DIR}/verl/trainer/runtime_env.yaml"}
 NNODES=${NNODES:-1}
 # Paths
 RAY_DATA_HOME=${RAY_DATA_HOME:-"${HOME}/verl"}
-MODEL_PATH=${MODEL_PATH:-"/dockerdata/models/Qwen/Qwen2.5-3B"}
-CKPTS_DIR=${CKPTS_DIR:-"/dockerdata/checkpoints/Qwen2.5-3B-klcov"}
-TRAIN_FILE=${TRAIN_FILE:-"/dockerdata/datasets/BytedTsinghua-SIA/DAPO-Math-17k/data/dapo-math-17k.parquet"}
-TEST_FILE=${TEST_FILE:-["/dockerdata/datasets/BytedTsinghua-SIA/AIME-2024/data/aime-2024.parquet"]}
+MODEL_PATH=${MODEL_PATH:-"/apdcephfs_zwfy/share_304071302/xjli/models/Qwen/Qwen2.5-3B"}
+CKPTS_DIR=${CKPTS_DIR:-"/apdcephfs_zwfy/share_304071302/xjli/checkpoints/Qwen2.5-3B-klcov"}
+TRAIN_FILE=${TRAIN_FILE:-"/apdcephfs_zwfy/share_304071302/xjli/datasets/BytedTsinghua-SIA/DAPO-Math-17k/data/dapo-math-17k.parquet"}
+TEST_FILE=${TEST_FILE:-["/apdcephfs_zwfy/share_304071302/xjli/datasets/BytedTsinghua-SIA/AIME-2024/data/aime-2024.parquet"]}
 
 # Algorithm
 temperature=1.0
@@ -58,7 +58,7 @@ kl_cov_ratio=0.002
 use_dynamic_bsz=True
 infer_micro_batch_size=null
 train_micro_batch_size=null
-offload=False
+offload=True
 
 HYDRA_FULL_ERROR=1 python -m recipe.entropy.main_entropy \
     data.train_files="${TRAIN_FILE}" \
