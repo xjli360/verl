@@ -14,8 +14,8 @@ kl_coef=0.0
 use_kl_loss=False
 kl_loss_coef=0.0
 
-clip_ratio_low=1
-clip_ratio_high=1
+clip_ratio_low=0.5
+clip_ratio_high=0.5
 clip_cov_ratio=0.0002
 clip_cov_lb=1.0
 clip_cov_ub=5.0
